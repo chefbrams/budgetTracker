@@ -16,6 +16,8 @@ request.onsuccess = function (e) {
   // Now check of app is online before reading database;
   if (navigator.onLine) {
     checkDatabase();
+  }else {
+    saveRecord();
   }
 };
 
@@ -53,7 +55,7 @@ function checkDatabase() {
           "Content-Type": "application/json"
         }
       })
-        .then(response => response.json())
+        .then((response) => response.json())
         .then(() => {
           const transaction = db.transaction(["pending"], "readwrite");
           const store = transaction.objectStore("pending");
