@@ -47,7 +47,7 @@ function checkDatabase() {
   // if successful then run post route, allow read/write access, allow access, clear items
   getAll.onsuccess = function () {
     if (getAll.result.length > 0) {
-      fetch("/api/transactioni/bulk", {
+      fetch("/api/transaction/bulk", {
         method: "POST",
         body: JSON.stringify(getAll.result),
         headers: {
