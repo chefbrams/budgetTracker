@@ -1,6 +1,8 @@
 let transactions = [];
 let myChart;
 
+
+
 fetch("/api/transaction")
   .then(response => {
     return response.json();
@@ -22,7 +24,11 @@ function populateTotal() {
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
+ 
+  
+
 }
+
 
 function populateTable() {
   let tbody = document.querySelector("#tbody");
@@ -144,6 +150,10 @@ function sendTransaction(isAdding) {
   });
 }
 
+if(navigator.onLine) {
+  populateTable()
+}
+
 document.querySelector("#add-btn").onclick = function() {
   sendTransaction(true);
 };
@@ -151,3 +161,5 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
+window.addEventListener("online", populateTable);
