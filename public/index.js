@@ -44,6 +44,10 @@ function populateTable() {
 
     tbody.appendChild(tr);
   });
+  if(navigator.onLine) {
+    populateTable()
+  }
+
 }
 
 function populateChart() {
@@ -150,9 +154,7 @@ function sendTransaction(isAdding) {
   });
 }
 
-if(navigator.onLine) {
-  populateTable()
-}
+
 
 document.querySelector("#add-btn").onclick = function() {
   sendTransaction(true);
