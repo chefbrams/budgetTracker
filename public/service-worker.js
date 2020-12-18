@@ -4,14 +4,14 @@ const DATA_CACHE_NAME = "data-cache-v1";
 
 const iconSizes = ["72", "96", "128", "144", "152", "192", "384", "512"];
 const iconFiles = iconSizes.map(
-  (size) => `./public/icons/icon-${size}x${size}.png`
+  (size) => `/public/icons/icon-${size}x${size}.png`
 );
 
 const staticFilesToPreCache = [
-  "./",
-  "./public/indexdb.js",
-  "./public/style.css",
-  "./public/manifest.webmanifest",
+  "/",
+  "/indexdb.js",
+  "/public/style.css",
+  "/public/manifest.webmanifest",
 ].concat(iconFiles);
 
 
