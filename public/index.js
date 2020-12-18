@@ -39,9 +39,7 @@ function populateTable() {
     tbody.appendChild(tr);
   });
 }
-if (navigator.onLine) {
-  populateTable();
-}
+
 function populateChart() {
   // copy array and reverse it
   let reversed = transactions.slice().reverse();
@@ -154,4 +152,3 @@ document.querySelector("#sub-btn").onclick = function () {
   sendTransaction(false);
 };
 
-window.addEventListener("online", populateTable);
